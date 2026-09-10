@@ -1,41 +1,197 @@
-# Tatame Fight Manager
+#  Lutas Casadas
 
-MVP administrativo para organizar lutas casadas de Jiu-Jitsu. Os atletas, lutas, resultados e a autenticação são persistidos pelo Supabase.
+Plataforma SaaS em desenvolvimento para **gestão, organização e matchmaking de lutas e eventos de Jiu-Jitsu**.
 
-## Configuração
+O projeto busca simplificar o processo de cadastro de atletas, criação de confrontos e gerenciamento de eventos, utilizando critérios esportivos para auxiliar na formação de lutas mais equilibradas.
 
-1. Instale as dependências:
-   ```bash
-   npm install
-   ```
-2. Crie um projeto no Supabase.
-3. No painel do Supabase, abra **SQL Editor**.
-4. Copie e execute todo o conteúdo de `supabase/schema.sql`.
-5. Em **Authentication**, mantenha habilitado o login por email e senha.
-6. Em **Authentication > Users**, crie manualmente o usuário administrador. A aplicação não possui cadastro público.
-7. Em **Project Settings > API**, copie a **Project URL** e a chave pública apropriada para navegador (`anon`/publishable). Nunca utilize a `service_role` no frontend.
-8. Copie `.env.example` para um arquivo chamado `.env`.
-9. Preencha sem aspas:
-   ```env
-   VITE_SUPABASE_URL=https://seu-projeto.supabase.co
-   VITE_SUPABASE_ANON_KEY=sua-chave-publica
-   ```
-10. Inicie a aplicação:
-    ```bash
-    npm run dev
-    ```
-11. Entre com o administrador criado no Supabase.
-12. Cadastre um atleta.
-13. Confirme no **Table Editor > athletes** que o registro foi criado.
-14. Crie uma luta pelo menu **Criar luta**.
-15. Confirme no **Table Editor > fights** que a luta foi criada.
+>  Projeto em desenvolvimento — versão atual focada em Jiu-Jitsu.
 
-O Dashboard mostra discretamente o estado da conexão durante o desenvolvimento. O arquivo SQL inclui oito atletas fictícios em um bloco comentado opcional.
 
-## Build de produção
 
-```bash
-npm run build
-```
+##  Objetivo
 
-Os arquivos gerados ficam em `dist/`. A URL e a chave pública precisam ser configuradas também no ambiente de hospedagem.
+Organizar lutas casadas manualmente pode exigir a comparação de diversos fatores entre atletas, como idade, peso, faixa, categoria e modalidade.
+
+O Lutas Casadas busca centralizar esse processo em uma única plataforma, permitindo cadastrar atletas, organizar eventos e utilizar regras de compatibilidade para auxiliar na escolha de adversários.
+
+A visão de longo prazo é transformar o projeto em um **SaaS para gestão de eventos e matchmaking em esportes de combate**, começando pelo Jiu-Jitsu e posteriormente permitindo suporte a outras modalidades.
+
+
+
+##  Matchmaking
+
+O sistema utiliza informações dos atletas para auxiliar na sugestão de possíveis confrontos.
+
+Entre os critérios considerados estão:
+
+- Idade
+- Peso
+- Faixa
+- Categoria
+- Modalidade
+- Disponibilidade para luta
+
+O objetivo não é substituir a decisão do organizador, mas fornecer informações que tornem o processo de matchmaking mais rápido, organizado e consistente.
+
+
+
+##  Modalidades
+
+Inicialmente, o sistema é direcionado ao Jiu-Jitsu:
+
+- Gi — com kimono
+- No-Gi — sem kimono
+
+A arquitetura do produto deverá evoluir para permitir novas regras e modalidades de esportes de combate.
+
+
+
+## ✨ Funcionalidades
+
+### Gestão de atletas
+
+- Cadastro de atletas
+- Edição de informações
+- Exclusão de atletas
+- Controle de idade
+- Controle de peso
+- Faixa e categoria
+- Modalidade
+- Identificação de atletas disponíveis para luta
+
+### Gestão de lutas
+
+- Criação de confrontos
+- Associação entre atletas
+- Visualização das lutas casadas
+- Alteração de confrontos
+- Exclusão e cancelamento de lutas
+- Registro do vencedor
+
+### Matchmaking
+
+- Sugestão de adversários
+- Comparação por idade
+- Comparação por peso
+- Compatibilidade por faixa
+- Compatibilidade por categoria
+- Filtro por Gi e No-Gi
+
+### Dashboard
+
+Visão geral da operação, incluindo informações como:
+
+- Atletas cadastrados
+- Atletas sem luta
+- Lutas casadas
+- Lutas realizadas
+- Situação dos confrontos
+
+
+
+##  Gestão de eventos
+
+A evolução do projeto prevê que atletas e confrontos possam ser organizados dentro de eventos.
+
+Cada evento poderá concentrar seus próprios:
+
+- Atletas
+- Confrontos
+- Categorias
+- Modalidades
+- Resultados
+
+Isso permitirá utilizar a plataforma em diferentes competições e organizações.
+
+
+
+##  Visão SaaS
+
+O projeto está sendo estruturado para evoluir de uma aplicação de gerenciamento para uma plataforma SaaS.
+
+A evolução prevista inclui:
+
+- Autenticação de usuários
+- Organizações independentes
+- Gestão de diferentes eventos
+- Isolamento de dados entre clientes
+- Perfis e permissões
+- Configuração de regras por modalidade
+- Histórico de eventos e confrontos
+- Expansão para outros esportes de combate
+
+
+
+##  Tecnologias
+
+A aplicação utiliza atualmente:
+
+- React
+- JavaScript
+- Vite
+- Supabase
+- Git
+- GitHub
+- Vercel
+
+O Supabase é utilizado como parte da infraestrutura de dados da aplicação.
+
+---
+
+##  Roadmap
+
+### MVP — Jiu-Jitsu
+
+- [x] Estrutura inicial da aplicação
+- [x] Integração inicial com banco de dados
+- [ ] Consolidar gestão de atletas
+- [ ] Consolidar gestão de lutas
+- [ ] Aprimorar mecanismo de matchmaking
+- [ ] Implementar gestão de eventos
+- [ ] Melhorar dashboard operacional
+- [ ] Implementar histórico de confrontos
+
+### SaaS
+
+- [ ] Implementar autenticação
+- [ ] Criar estrutura de organizações
+- [ ] Isolar dados por organização
+- [ ] Implementar usuários e permissões
+- [ ] Preparar onboarding de novos clientes
+- [ ] Estruturar planos e recursos do produto
+
+### Expansão
+
+- [ ] Tornar regras de matchmaking configuráveis
+- [ ] Adicionar novas modalidades de combate
+- [ ] Criar regras específicas por modalidade
+- [ ] Evoluir relatórios e indicadores
+
+
+
+## 🔐 Segurança e dados
+
+Por se tratar de uma aplicação que poderá armazenar informações de atletas e organizações, segurança e isolamento dos dados fazem parte da evolução planejada do produto.
+
+Credenciais e informações sensíveis não devem ser armazenadas diretamente no repositório.
+
+O modelo de autorização e isolamento de dados será evoluído juntamente com a arquitetura SaaS.
+
+---
+
+##  Status
+
+**Em desenvolvimento ativo.**
+
+A versão atual é focada na validação das funcionalidades essenciais para organização de atletas e lutas de Jiu-Jitsu.
+
+O produto continuará evoluindo até a consolidação do MVP e posteriormente da arquitetura SaaS.
+
+
+
+## 👨‍💻 Desenvolvedor
+
+**Nelson Souza**  
+Desenvolvedor de Software
+
+GitHub: [@nelsonlsouza](https://github.com/nelsonlsouza)
