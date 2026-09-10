@@ -46,7 +46,7 @@ A arquitetura do produto deverá evoluir para permitir novas regras e modalidade
 
 
 
-## ✨ Funcionalidades
+##  Funcionalidades
 
 ### Gestão de atletas
 
@@ -169,7 +169,7 @@ O Supabase é utilizado como parte da infraestrutura de dados da aplicação.
 
 
 
-## 🔐 Segurança e dados
+##  Segurança e dados
 
 Por se tratar de uma aplicação que poderá armazenar informações de atletas e organizações, segurança e isolamento dos dados fazem parte da evolução planejada do produto.
 
@@ -189,7 +189,7 @@ O produto continuará evoluindo até a consolidação do MVP e posteriormente da
 
 
 
-## 👨‍💻 Desenvolvedor
+##  Desenvolvedor
 
 **Nelson Souza**  
 Desenvolvedor de Software
